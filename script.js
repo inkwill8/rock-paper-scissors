@@ -5,12 +5,27 @@ function getComputerChoice() {
     let computerChoice = Math.random();
     // write a condition to explain to the computer to select 1 of the 3 choices based on the random result
     if (computerChoice <= 0.33 ) {
-        console.log('Rock');
-    } else if (computerChoice >= 0.34 && computerChoice <= 0.66) {
-        console.log('Paper');
+        return ('Rock');
+    } else if (computerChoice >= 0.34 && computerChoice <= 0.67) {
+        return ('Paper');
     } else {
-        console.log('Scissor');
+        return ('Scissor');
     }
 }
 
-getComputerChoice();
+// // Log the computer's choice by calling the function
+// getComputerChoice();
+
+function getHumanChoice() {
+    let humanChoice = prompt('Please choose your weapon');
+
+    if (humanChoice === 'rock') {
+        return ('Rock');
+    } else if (humanChoice === 'paper') {
+        return ('Paper');
+    } else if (humanChoice === 'scissors') {
+        return ('Scissors');
+    } else {
+        return ('That is not a valid weapon choice');
+    }
+}
