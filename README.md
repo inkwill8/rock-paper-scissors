@@ -9,15 +9,15 @@ The goal is to practice thinking like a programmer by breaking up large problems
 
   ### Bugs to Fix
 
-  - I'm getting an uncaught TypeError on line 44 when humanChoice is changed to lowercase. I only see this when I try to log playRound()'s value manually.
+  - ~~I'm getting an uncaught TypeError on when humanChoice is changed to lowercase. I only see this when I try to log playRound()'s value manually.~~
 
-  - When I input an all caps string, I am getting the 
+  - ~~When I input an all caps string, I am getting the~~
 
 ```javascript
   else {
         console.log('You win! Scissors beats paper!');
     }
 ```
-thrown automatically.
+~~thrown automatically.~~
 
 - Not sure if the updateScore() function is actually incrementing the scores since every time I log the values of humanScore and computerScore after a round, they're both still 0.

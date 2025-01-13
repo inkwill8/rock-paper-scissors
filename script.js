@@ -45,19 +45,17 @@ const computerSelection = getComputerChoice();
 // this function should pin both human and computer results against each other and determine a winner
 
 function playRound(humanChoice, computerChoice) {
-   let compInput = computerChoice.toLowerCase();
-
-    if (humanChoice === compInput) {
+    if (humanChoice === computerChoice) {
         console.log(`It's a tie!`);
-    } else if (humanChoice === 'rock' && compInput === 'paper') {
+    } else if (humanChoice === 'rock' && computerChoice === 'paper') {
         console.log('You lose! Paper beats rock!');
-    } else if (humanChoice === 'rock' && compInput === 'scissors') {
+    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
         console.log('You win! Rock beats scissors!');
-    } else if (humanChoice === 'paper' && compInput === 'rock') {
+    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
         console.log('You win! Paper beats rock!');
-    }  else if (humanChoice === 'paper' && compInput === 'scissors') {
+    }  else if (humanChoice === 'paper' && computerChoice === 'scissors') {
         console.log('You lose! Scissors beats paper!');
-    } else if (humanChoice === 'scissors' && compInput === 'rock') {
+    } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
         console.log('You lose! Rock beats scissors!');
     } else {
         console.log('You win! Scissors beats paper!');
@@ -82,13 +80,13 @@ function getWinner() {
 
 function updateScore() {
     if (getWinner === 1) {
-        humanScore++;
+        return humanScore++;
     } else if ( getWinner === 2) {
-        computerScore++;
+        return computerScore++;
     } else {
-
+        return undefined;
     }
-
-    // console.log(` Your score: ${humanScore}`);
-    // console.log(`Computer's score: ${computerScore}`);
 }
+
+console.log(`Your score: ${humanScore}`);
+console.log(`Computer's score: ${computerScore}`);
