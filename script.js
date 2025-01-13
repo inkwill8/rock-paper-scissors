@@ -7,6 +7,7 @@ let computerScore = 0;
 
 
 // write a function to randomly return one of the following strings: 'rock', 'paper', or 'scissors'
+// could probably update this to shift the range +3 and then use Math.floor
 
 function getComputerChoice() {
     // store a variable with the computer's random choice
@@ -28,11 +29,11 @@ function getHumanChoice() {
     let userInput = humanChoice.toLowerCase();
 
     if (userInput === 'rock') {
-        return ('Rock');
+        return ('rock');
     } else if (userInput === 'paper') {
-        return ('Paper');
+        return ('paper');
     } else if (userInput === 'scissors') {
-        return ('Scissors');
+        return ('scissors');
     } else {
         return ('That is not a valid weapon choice');
     }
@@ -46,17 +47,17 @@ const computerSelection = getComputerChoice();
 function playRound(humanChoice, computerChoice) {
    let compInput = computerChoice.toLowerCase();
 
-    if (userInput === compInput) {
+    if (humanChoice === compInput) {
         console.log(`It's a tie!`);
-    } else if (userInput === 'rock' && compInput === 'paper') {
+    } else if (humanChoice === 'rock' && compInput === 'paper') {
         console.log('You lose! Paper beats rock!');
-    } else if (userInput === 'rock' && compInput === 'scissors') {
+    } else if (humanChoice === 'rock' && compInput === 'scissors') {
         console.log('You win! Rock beats scissors!');
-    } else if (userInput === 'paper' && compInput === 'rock') {
+    } else if (humanChoice === 'paper' && compInput === 'rock') {
         console.log('You win! Paper beats rock!');
-    }  else if (userInput === 'paper' && compInput === 'scissors') {
+    }  else if (humanChoice === 'paper' && compInput === 'scissors') {
         console.log('You lose! Scissors beats paper!');
-    } else if (userInput === 'scissors' && compInput === 'rock') {
+    } else if (humanChoice === 'scissors' && compInput === 'rock') {
         console.log('You lose! Rock beats scissors!');
     } else {
         console.log('You win! Scissors beats paper!');
@@ -67,22 +68,22 @@ playRound(humanSelection, computerSelection);
 
 // define a function that will assign a value depending on the output of the round
 
-function winDeterminer() {
+function getWinner() {
     if (playRound() === 'You win! Rock beats scissors!' || 'You win! Paper beats rock!' || 'You win! Scissors beats paper!') {
         return 1;
-    } else if (playRound === 'You lose! Paper beats rock!' || 'You lose! Scissors beats paper!' || 'You lose! Rock beats scissors!') {
+    } else if (playRound() === 'You lose! Paper beats rock!' || 'You lose! Scissors beats paper!' || 'You lose! Rock beats scissors!') {
         return 2;
     }  else {
         return 3
     }
 } 
 
-// this function should update the score counter after checking the value of winDeterminer()
+// this function should update the score counter after checking the value of getWinner()
 
 function updateScore() {
-    if (winDeterminer === 1) {
+    if (getWinner === 1) {
         humanScore++;
-    } else if ( winDeterminer === 2) {
+    } else if ( getWinner === 2) {
         computerScore++;
     } else {
 
