@@ -1,3 +1,9 @@
+// Some variables
+
+let humanScore = 0;
+let computerScore = 0;
+
+
 // write a function to randomly return one of the following strings: 'rock', 'paper', or 'scissor'
 
 function getComputerChoice() {
@@ -12,9 +18,7 @@ function getComputerChoice() {
         return ('Scissor');
     }
 }
-
-// // Log the computer's choice by calling the function
-// getComputerChoice();
+// write a function to prompt, save, and return a user input
 
 function getHumanChoice() {
     let humanChoice = prompt('Please choose your weapon');
@@ -29,3 +33,4 @@ function getHumanChoice() {
         return ('That is not a valid weapon choice');
     }
 }
+
