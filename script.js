@@ -73,7 +73,7 @@ function winDeterminer() {
     }  else {
         return 3
     }
-    } 
+} 
 
 // this function should update the score counter after checking the value of winDeterminer()
 
@@ -85,4 +85,7 @@ function updateScore() {
     } else {
 
     }
+
+    // console.log(` Your score: ${humanScore}`);
+    // console.log(`Computer's score: ${computerScore}`);
 }
