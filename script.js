@@ -3,6 +3,9 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
 
 // write a function to randomly return one of the following strings: 'rock', 'paper', or 'scissors'
 
@@ -35,6 +38,8 @@ function getHumanChoice() {
     }
 }
 
+// this function should pin both human and computer results against each other and determine a winner
+
 function playRound(humanChoice, computerChoice) {
    let userInput = humanChoice.toLowerCase();
    let compInput = computerChoice.toLowerCase();
@@ -45,11 +50,18 @@ function playRound(humanChoice, computerChoice) {
         console.log('You lose! Paper beats rock!');
     } else if (userInput === 'rock' && compInput === 'scissors') {
         console.log('You win! Rock beats scissors!')
+    } else if (userInput === 'paper' && compInput === 'rock') {
+        console.log('You win! Paper beats rock!');
+    }  else if (userInput === 'paper' && compInput === 'scissors') {
+        console.log('You lose! Scissors beats paper!');
+    } else if (userInput === 'scissors' && compInput === 'rock') {
+        console.log('You lose! Rock beats scissors!');
+    } else {
+        console.log('You win! Scissors beats paper!');
     }
-   
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+
 
 playRound(humanSelection, computerSelection);
+
