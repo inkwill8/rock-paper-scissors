@@ -49,7 +49,7 @@ function playRound(humanChoice, computerChoice) {
     } else if (userInput === 'rock' && compInput === 'paper') {
         console.log('You lose! Paper beats rock!');
     } else if (userInput === 'rock' && compInput === 'scissors') {
-        console.log('You win! Rock beats scissors!')
+        console.log('You win! Rock beats scissors!');
     } else if (userInput === 'paper' && compInput === 'rock') {
         console.log('You win! Paper beats rock!');
     }  else if (userInput === 'paper' && compInput === 'scissors') {
@@ -63,24 +63,26 @@ function playRound(humanChoice, computerChoice) {
 
 playRound(humanSelection, computerSelection);
 
-// define a function that will assign a boolean value depending on the output of the round
+// define a function that will assign a value depending on the output of the round
 
 function winDeterminer() {
     if (playRound() === 'You win! Rock beats scissors!' || 'You win! Paper beats rock!' || 'You win! Scissors beats paper!') {
-        return true;
-    } else {
-        return false
+        return 1;
+    } else if (playRound === 'You lose! Paper beats rock!' || 'You lose! Scissors beats paper!' || 'You lose! Rock beats scissors!') {
+        return 2;
+    }  else {
+        return 3
+    }
     } 
-}
 
 // this function should update the score counter after checking the value of winDeterminer()
 
-function scoreCounter() {
-    if (winDeterminer === true) {
-        return humanScore++;
-        } else if (winDeterminer === false && playRound() === `It's a tie!`) {
-        // do nothing. add no score
+function updateScore() {
+    if (winDeterminer === 1) {
+        humanScore++;
+    } else if ( winDeterminer === 2) {
+        computerScore++;
     } else {
-       return computerScore++;
+
     }
 }
