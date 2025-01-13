@@ -3,8 +3,7 @@
 let humanScore = 0;
 let computerScore = 0;
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+
 
 
 // write a function to randomly return one of the following strings: 'rock', 'paper', or 'scissors'
@@ -14,11 +13,11 @@ function getComputerChoice() {
     let computerChoice = Math.random();
     // write a condition to explain to the computer to select 1 of the 3 choices based on the random result
     if (computerChoice <= 0.33 ) {
-        return ('Rock');
+        return ('rock');
     } else if (computerChoice >= 0.34 && computerChoice <= 0.67) {
-        return ('Paper');
+        return ('paper');
     } else {
-        return ('Scissors');
+        return ('scissors');
     }
 }
 
@@ -26,22 +25,25 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let humanChoice = prompt('Please choose your weapon');
+    let userInput = humanChoice.toLowerCase();
 
-    if (humanChoice === 'rock') {
+    if (userInput === 'rock') {
         return ('Rock');
-    } else if (humanChoice === 'paper') {
+    } else if (userInput === 'paper') {
         return ('Paper');
-    } else if (humanChoice === 'scissors') {
+    } else if (userInput === 'scissors') {
         return ('Scissors');
     } else {
         return ('That is not a valid weapon choice');
     }
 }
 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
 // this function should pin both human and computer results against each other and determine a winner
 
 function playRound(humanChoice, computerChoice) {
-   let userInput = humanChoice.toLowerCase();
    let compInput = computerChoice.toLowerCase();
 
     if (userInput === compInput) {
