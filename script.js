@@ -35,7 +35,7 @@ function getHumanChoice() {
     } else if (userInput === 'scissors') {
         return ('scissors');
     } else {
-        return ('That is not a valid weapon choice');
+        console.log('That is not a valid choice');
     }
 }
 
@@ -57,34 +57,38 @@ function playRound(humanChoice, computerChoice) {
         console.log('You lose! Scissors beats paper!');
     } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
         console.log('You lose! Rock beats scissors!');
-    } else {
+    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
         console.log('You win! Scissors beats paper!');
+    } else {
+
     }
 }
 
-playRound(humanSelection, computerSelection);
+const roundResult = playRound(humanSelection, computerSelection);
 
 // define a function that will assign a value depending on the output of the round
 
-function getWinner() {
-    if (playRound() === 'You win! Rock beats scissors!' || 'You win! Paper beats rock!' || 'You win! Scissors beats paper!') {
+function getWinner(roundResult) {
+    if (roundResult === 'You win! Rock beats scissors!' || 'You win! Paper beats rock!' || 'You win! Scissors beats paper!') {
         return 1;
-    } else if (playRound() === 'You lose! Paper beats rock!' || 'You lose! Scissors beats paper!' || 'You lose! Rock beats scissors!') {
+    } else if (roundResult === 'You lose! Paper beats rock!' || 'You lose! Scissors beats paper!' || 'You lose! Rock beats scissors!') {
         return 2;
     }  else {
         return 3
     }
-} 
+}
+
+const winner = getWinner();
 
 // this function should update the score counter after checking the value of getWinner()
 
-function updateScore() {
-    if (getWinner === 1) {
-        return humanScore++;
-    } else if ( getWinner === 2) {
-        return computerScore++;
+function updateScore(winner) {
+    if (winner === 1) {
+        humanScore++;
+    } else if ( winner === 2) {
+        computerScore++;
     } else {
-        return undefined;
+
     }
 }
 
