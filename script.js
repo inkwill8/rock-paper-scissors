@@ -64,11 +64,11 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const roundResult = playRound(humanSelection, computerSelection);
+let roundResult = playRound(humanSelection, computerSelection);
 
 // define a function that will assign a value depending on the output of the round
 
-function getWinner(roundResult) {
+function getWinner() {
     if (roundResult === 'You win! Rock beats scissors!' || 'You win! Paper beats rock!' || 'You win! Scissors beats paper!') {
         return 1;
     } else if (roundResult === 'You lose! Paper beats rock!' || 'You lose! Scissors beats paper!' || 'You lose! Rock beats scissors!') {
@@ -78,14 +78,13 @@ function getWinner(roundResult) {
     }
 }
 
-const winner = getWinner();
-
 // this function should update the score counter after checking the value of getWinner()
 
-function updateScore(winner) {
+function updateScore() {
+    let winner = getWinner(roundResult);
     if (winner === 1) {
         humanScore++;
-    } else if ( winner === 2) {
+    } else if (winner === 2) {
         computerScore++;
     } else {
 
