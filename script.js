@@ -109,15 +109,12 @@ updateScore(winner);
 for (let i = 0; i < 5; i++) {
     playGame();
 
-    // log the updated scores to the console
+}
+
+// log the updated scores to the console
 
 console.log(`Your score: ${humanScore}`);
 console.log(`Computer's score: ${computerScore}`);
-}
-
-
-
-
 
 // check which score is higher and declare a winner
 
