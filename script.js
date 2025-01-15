@@ -1,11 +1,10 @@
-function playGame() {
-
-
-
 // Some variables
 
 let humanScore = 0;
 let computerScore = 0;
+
+
+function playGame() {
 
 // write a function to randomly return one of the following strings: 'rock', 'paper', or 'scissors'
 // could probably update this to shift the range +3 and then use Math.floor
@@ -49,17 +48,17 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         return (`It's a tie!`);
     } else if (humanChoice === 'rock' && computerChoice === 'paper') {
-        return ('You lose! Paper beats rock!');
+        return ('Uh oh! Paper beats rock!');
     } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-        return ('You win! Rock beats scissors!');
+        return ('Nice! Rock beats scissors!');
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-        return ('You win! Paper beats rock!');
+        return ('Nice! Paper beats rock!');
     }  else if (humanChoice === 'paper' && computerChoice === 'scissors') {
-        return ('You lose! Scissors beats paper!');
+        return ('Uh oh! Scissors beats paper!');
     } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
-        return ('You lose! Rock beats scissors!');
+        return ('Uh oh! Rock beats scissors!');
     } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-        return ('You win! Scissors beats paper!');
+        return ('Nice! Scissors beats paper!');
     } else {
 
     }
@@ -74,13 +73,13 @@ let winner = getWinner(roundResult);
 // define a function that will assign a value depending on the output of the round
 
 function getWinner(outputString) {
-    if (outputString === 'You win! Rock beats scissors!' ||
-        outputString === 'You win! Paper beats rock!' ||
-        outputString === 'You win! Scissors beats paper!') {
+    if (outputString === 'Nice! Rock beats scissors!' ||
+        outputString === 'Nice! Paper beats rock!' ||
+        outputString === 'Nice! Scissors beats paper!') {
         return 1;
-    } else if (outputString === 'You lose! Paper beats rock!' || 
-        outputString === 'You lose! Scissors beats paper!' || 
-        outputString === 'You lose! Rock beats scissors!') {
+    } else if (outputString === 'Uh oh! Paper beats rock!' || 
+        outputString === 'Uh oh! Scissors beats paper!' || 
+        outputString === 'Uh oh! Rock beats scissors!') {
         return 2;
     }  else {
         return 3;
@@ -103,15 +102,29 @@ function updateScore(result) {
 
 updateScore(winner);
 
-// log the updated scores to the console
-
-console.log(`Your score: ${humanScore}`);
-console.log(`Computer's score: ${computerScore}`);
-
 }
 
 // loop through this 5 times
 
 for (let i = 0; i < 5; i++) {
     playGame();
+
+    // log the updated scores to the console
+
+console.log(`Your score: ${humanScore}`);
+console.log(`Computer's score: ${computerScore}`);
+}
+
+
+
+
+
+// check which score is higher and declare a winner
+
+if (humanScore > computerScore) {
+    console.log('Congratulations! You win the game!');
+} else if (computerScore > humanScore) {
+    console.log('Sorry, you lose the game!');
+} else {
+    console.log(`It's a tie!`);
 }
