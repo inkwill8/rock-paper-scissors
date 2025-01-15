@@ -65,19 +65,25 @@ let roundResult = playRound(humanSelection, computerSelection);
 
 console.log(roundResult);
 
+let winner = getWinner(roundResult);
+
 // define a function that will assign a value depending on the output of the round
 
 function getWinner(outputString) {
-    if (outputString === 'You win! Rock beats scissors!' || 'You win! Paper beats rock!' || 'You win! Scissors beats paper!') {
+    if (outputString === 'You win! Rock beats scissors!' ||
+        outputString === 'You win! Paper beats rock!' ||
+        outputString === 'You win! Scissors beats paper!') {
         return 1;
-    } else if (outputString === 'You lose! Paper beats rock!' || 'You lose! Scissors beats paper!' || 'You lose! Rock beats scissors!') {
+    } else if (outputString === 'You lose! Paper beats rock!' || 
+        outputString === 'You lose! Scissors beats paper!' || 
+        outputString === 'You lose! Rock beats scissors!') {
         return 2;
     }  else {
-        return 3
+        return 3;
     }
 }
 
-let winner = getWinner(roundResult);
+
 
 // this function should update the score counter after checking the value of getWinner()
 
