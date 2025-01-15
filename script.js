@@ -1,3 +1,7 @@
+function playGame() {
+
+
+
 // Some variables
 
 let humanScore = 0;
@@ -83,8 +87,6 @@ function getWinner(outputString) {
     }
 }
 
-
-
 // this function should update the score counter after checking the value of getWinner()
 
 function updateScore(result) {
@@ -97,7 +99,19 @@ function updateScore(result) {
     }
 }
 
+// plug the numerical winner value into the updateScore() function to determine which score to increment
+
 updateScore(winner);
+
+// log the updated scores to the console
 
 console.log(`Your score: ${humanScore}`);
 console.log(`Computer's score: ${computerScore}`);
+
+}
+
+// loop through this 5 times
+
+for (let i = 0; i < 5; i++) {
+    playGame();
+}
