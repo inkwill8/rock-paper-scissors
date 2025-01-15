@@ -22,4 +22,4 @@ The goal is to practice thinking like a programmer by breaking up large problems
 
 - ~~Not sure if the updateScore() function is actually incrementing the scores since every time I log the values of humanScore and computerScore after a round, they're both still 0.~~
 
-- Now need to fix a bug where the human score counter is always incremented by 1 when a round is completed.
+- ~~Now need to fix a bug where the human score counter is always incremented by 1 when a round is completed.~~
