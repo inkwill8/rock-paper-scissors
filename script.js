@@ -104,13 +104,6 @@ updateScore(winner);
 
 }
 
-// loop through this 5 times
-
-for (let i = 0; i < 5; i++) {
-    playGame();
-
-}
-
 // log the updated scores to the console
 
 console.log(`Your score: ${humanScore}`);
@@ -125,3 +118,7 @@ if (humanScore > computerScore) {
 } else {
     console.log(`It's a tie!`);
 }
+
+// DOM
+
+const buttons = document.querySelectorAll('.btn');
