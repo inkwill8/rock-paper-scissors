@@ -121,4 +121,10 @@ if (humanScore > computerScore) {
 
 // DOM
 
-const buttons = document.querySelectorAll('.btn');
+const buttons = document.getElementsByClassName('btn');
+
+for (btn of buttons) {
+    btn.addEventListener('click' () => {
+        
+    })
+}
