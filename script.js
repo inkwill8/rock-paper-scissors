@@ -3,9 +3,6 @@
 let humanScore = 0;
 let computerScore = 0;
 
-
-function playGame() {
-
 // write a function to randomly return one of the following strings: 'rock', 'paper', or 'scissors'
 // could probably update this to shift the range +3 and then use Math.floor
 
@@ -102,8 +99,6 @@ function updateScore(result) {
 
 updateScore(winner);
 
-}
-
 // log the updated scores to the console
 
 console.log(`Your score: ${humanScore}`);
@@ -120,11 +115,11 @@ if (humanScore > computerScore) {
 }
 
 // DOM
-
+const display = document.querySelector('div');
 const buttons = document.getElementsByClassName('btn');
 
 for (btn of buttons) {
-    btn.addEventListener('click' () => {
+    btn.addEventListener('click', playRound() {
         
     })
 }
