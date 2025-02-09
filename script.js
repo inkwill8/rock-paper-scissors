@@ -2,6 +2,17 @@
 
 let humanScore = 0;
 let computerScore = 0;
+let btnValue;
+
+// DOM
+const display = document.querySelector('div');
+const buttons = document.getElementsByClassName('btn');
+
+for (btn of buttons) {
+    btn.addEventListener('click', (event) => {
+        btnValue = event.currentTarget.value;
+    })
+}
 
 // write a function to randomly return one of the following strings: 'rock', 'paper', or 'scissors'
 // could probably update this to shift the range +3 and then use Math.floor
@@ -19,17 +30,16 @@ function getComputerChoice() {
     }
 }
 
-// write a function to prompt, save, and return a user input
+// write a function to save and return a user input
 
 function getHumanChoice() {
-    let humanChoice = prompt('Please choose your weapon');
-    let userInput = humanChoice.toLowerCase();
+    let humanChoice = btnValue;
 
-    if (userInput === 'rock') {
+    if (humanChoice === 'rock') {
         return ('rock');
-    } else if (userInput === 'paper') {
+    } else if (humanChoice === 'paper') {
         return ('paper');
-    } else if (userInput === 'scissors') {
+    } else if (humanChoice === 'scissors') {
         return ('scissors');
     } else {
         console.log('That is not a valid choice');
@@ -112,14 +122,4 @@ if (humanScore > computerScore) {
     console.log('Sorry, you lose the game!');
 } else {
     console.log(`It's a tie!`);
-}
-
-// DOM
-const display = document.querySelector('div');
-const buttons = document.getElementsByClassName('btn');
-
-for (btn of buttons) {
-    btn.addEventListener('click', playRound() {
-        
-    })
 }
